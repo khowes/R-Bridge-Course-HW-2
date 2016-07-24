@@ -1,0 +1,39 @@
+---
+title:  "R Bridge Week 2 Assignment"
+author: "Ken Howes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## "n choose r"
+
+In probability, "n choose r" means n! / (( n - r)! * r!).   For example, "5 choose 3" evaluates to 10.
+R has built in functions for choose() and factorial(). The objective of this assignment is to write a variation of the choose() function that does not use either of these functions.
+
+```{r }
+
+n = 4
+r = 2
+d = n - r
+
+x <- 1
+for (i in 1:n) {x <- x * i}
+x
+
+y <- 1
+for (i in 1:r) {y <- y * i}
+y
+
+
+z <- 1
+for (i in 1:d) {z <- z * i}
+z
+
+x / (z * y)
+
+```
+
+
